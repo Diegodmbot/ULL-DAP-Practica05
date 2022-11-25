@@ -3,11 +3,9 @@ package practica5;
 public class Main {
     public static void main(String[] args) throws InterruptedException {
         TrafficLight trafficLight = new TrafficLight();
-        while (true) {
-            trafficLight.doAction();
-        }
+        trafficLight.doAction();
     }
     static void wait_(int seconds) throws InterruptedException {
-        Thread.sleep(seconds * 1000);
+        Thread.sleep(seconds * 1000L);
     }
 }

@@ -3,6 +3,12 @@
 title __DAP-PRACTICA05's Class Diagram__\n
 
   namespace practica5 {
+    class practica5.GreenBlinkingTrafficState {
+    }
+  }
+  
+
+  namespace practica5 {
     class practica5.GreenTrafficState {
     }
   }
@@ -27,7 +33,7 @@ title __DAP-PRACTICA05's Class Diagram__\n
   
 
   namespace practica5 {
-    interface practica5.TrafficState {
+    abstract class practica5.TrafficState {
     }
   }
   
@@ -38,10 +44,13 @@ title __DAP-PRACTICA05's Class Diagram__\n
   }
   
 
-  practica5.GreenTrafficState .up.|> practica5.TrafficState
-  practica5.RedTrafficState .up.|> practica5.TrafficState
+  practica5.GreenBlinkingTrafficState -up-|> practica5.TrafficState
+  practica5.GreenTrafficState -up-|> practica5.TrafficState
+  practica5.Main -up-|> javax.swing.JFrame
+  practica5.RedTrafficState -up-|> practica5.TrafficState
   practica5.TrafficLight o-- practica5.TrafficState : state
-  practica5.YellowTrafficState .up.|> practica5.TrafficState
+  practica5.TrafficState o-- practica5.TrafficLight : trafficLight
+  practica5.YellowTrafficState -up-|> practica5.TrafficState
 
 
 right footer

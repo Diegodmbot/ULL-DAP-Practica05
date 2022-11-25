@@ -10,6 +10,8 @@ public class TrafficLight {
         this.state = state;
     }
     public void doAction() throws InterruptedException {
-        this.state.doAction();
+        while (true) {
+            this.state.doAction();
+        }
     }
 }
